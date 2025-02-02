@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean id="userDatabase" class="com.low.coupling.UserDatabase">
+        <property name="data" value="defaultUserDB"/>
+    </bean>
+
+    <bean id="webService" class="com.low.coupling.WebServiceProvider">
+        <property name="data" value="defaultWebDB"/>
+    </bean>
+
+    <bean id="userManagerLocalDB" class="com.low.coupling.UserDataManager">
+        <constructor-arg ref="userDatabase"/>
+    </bean>
+
+    <bean id="userManagerWebDB" class="com.low.coupling.UserDataManager">
+        <constructor-arg ref="webService"/>
+    </bean>
+    <!--    we can also define properties which will use predefined setters in the class to set predefined properties in the class-->
+</beans>

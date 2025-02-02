@@ -6,4 +6,5 @@
 
     <!-- bean definitions here -->
     <bean id="myBean" class="car.example.bean.MyBean"> </bean>
+<!--    we can also define properties which will use predefined setters in the class to set predefined properties in the class--> 
 </beans>

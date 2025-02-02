@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
-    public static void main(String[] args){
+    public static void main(String[] args) throws BeansException{
         ApplicationContext context
                 = new ClassPathXmlApplicationContext("applicationBeanContext.xml");
         MyBean myBean = (MyBean) context.getBean("myBean");
